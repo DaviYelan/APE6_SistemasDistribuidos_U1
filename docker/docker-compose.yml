@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # ==========================================
+  # Broker MQTT - Eclipse Mosquitto
+  # ==========================================
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto_broker
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    restart: unless-stopped
+
+  # ==========================================
+  # Broker AMQP - RabbitMQ con Management UI
+  # ==========================================
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_broker
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+    restart: unless-stopped
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
