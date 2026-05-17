@@ -25,8 +25,7 @@
 12. [Patrones de Mensajería Aplicados](#patrones-de-mensajería-aplicados)
 13. [Exchanges, Colas, Routing Keys y Topics](#exchanges-colas-routing-keys-y-topics)
 14. [Seguridad Implementada](#seguridad-implementada)
-15. [Preguntas de Control](#preguntas-de-control)
-16. [Solución de Problemas](#solución-de-problemas)
+15. [Solución de Problemas](#solución-de-problemas)
 
 ---
 
